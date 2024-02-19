@@ -30,6 +30,11 @@ async function fetchCircuitByRef(req, res, sb) {
         jsonMsg(res, "Error fetching from 'circuits' table", error);
         return;
     }
+
+    if (!data.length) {
+        jsonMsg(res, "Provided `ref` does not correspond to any existing circuit.");
+        return;
+    }
     
     res.json(data);
 }
@@ -53,6 +58,11 @@ async function fetchCircuitBySeason(req, res, sb) {
     
     if (error) {
         jsonMsg(res, "Error fetching from 'circuits' table", error);
+        return;
+    }
+
+    if (!data.length) {
+        jsonMsg(res, "Provided `year` has no circuits used.");
         return;
     }
     

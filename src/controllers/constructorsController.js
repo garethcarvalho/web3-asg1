@@ -28,6 +28,11 @@ async function fetchConstructorByRef(req, res, sb) {
         jsonMsg(res, "Error fetching from 'constructors' table", error);
         return;
     }
+
+    if (!data.length) {
+        jsonMsg(res, "Provided `ref` does not correspond to any existing constructor.");
+        return;
+    }
     
     res.json(data);
 }
