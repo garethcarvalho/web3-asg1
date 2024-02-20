@@ -4,15 +4,19 @@ const app = express();
 app.use(express.json());
 
 const routes = require('./routes.js');
+
 routes.handleSeasons(app);
 routes.handleCircuits(app);
 routes.handleConstructors(app);
 routes.handleDrivers(app);
 routes.handleRaces(app);
+routes.handleResults(app);
+routes.handleQualifying(app);
+routes.handleStandings(app);
 
 const port = 8080;
 app.listen(port, () => {
-    console.log(`F1 Server Listetning on port: ${port}
+    console.log(`F1 Server Listening on port: ${port}
     
     Sample Routes: 
     http://localhost:${port}/api/seasons

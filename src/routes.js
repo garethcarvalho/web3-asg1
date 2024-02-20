@@ -6,6 +6,9 @@ const circuitsController = require('./controllers/circuitsController.js');
 const constructorsController = require('./controllers/constructorsController.js');
 const driversController = require('./controllers/driversController.js');
 const racesController = require('./controllers/racesController.js');
+const resultsController = require('./controllers/resultsController.js');
+const qualifyingController = require('./controllers/qualifyingController.js');
+const standingsController = require('./controllers/standingsController.js');
 
 function handleSeasons(app) {
     app.get('/api/seasons', (req, res) => {
@@ -72,6 +75,44 @@ function handleRaces(app) {
     app.get('/api/races/season/:year/:round', (req, res) => {
         racesController.fetchRacesBySeasonAndRound(req, res, sb);
     });
+
+    app.get('/api/races/circuits/:ref', (req, res) => {
+        racesController.fetchRacesByCircuitRef(req, res, sb);
+    });
+
+    app.get('/api/races/circuits/:ref/season/:start/:end', (req, res) => {
+        racesController.fetchRacesByRefAndSeasons(req, res, sb);
+    });
+}
+
+function handleResults(app) {
+    app.get('/api/results/:raceId', (req, res) => {
+        resultsController.fetchResultsByRaceID(req, res, sb);
+    });
+
+    app.get('/api/results/driver/:ref', (req, res) => {
+        resultsController.fetchResultsByDriverRef(req, res, sb);
+    });
+
+    app.get('/api/results/driver/:ref/seasons/:start/:end', (req, res) => {
+        resultsController.fetchResultsByDriverRefAndSeason(req, res, sb);
+    });
+}
+
+function handleQualifying(app) {
+    app.get('/api/qualifying/:raceId', (req, res) => {
+        qualifyingController.fetchQualifyingByRaceID(req, res, sb);
+    });
+}
+
+function handleStandings(app) {
+    app.get('/api/standings/drivers/:raceId', (req, res) => {
+        standingsController.fetchDriverStandingsByRaceID(req, res, sb);
+    });
+
+    app.get('/api/standings/constructors/:raceId', (req, res) => {
+        standingsController.fetchConstructorStandingsByRaceID(req, res, sb);
+    });
 }
 
 module.exports = {
@@ -79,5 +120,8 @@ module.exports = {
     handleCircuits,
     handleConstructors,
     handleDrivers,
-    handleRaces
+    handleRaces,
+    handleResults,
+    handleQualifying,
+    handleStandings
 };
