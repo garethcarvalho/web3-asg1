@@ -20,12 +20,32 @@ app.listen(port, () => {
     
     Sample Routes: 
     http://localhost:${port}/api/seasons
+
     http://localhost:${port}/api/circuits
     http://localhost:${port}/api/circuits/albert_park
     http://localhost:${port}/api/circuits/season/2020
+
     http://localhost:${port}/api/constructors
     http://localhost:${port}/api/constructors/mercedes
+
     http://localhost:${port}/api/drivers
     http://localhost:${port}/api/drivers/hamilton
+    http://localhost:${port}/api/drivers/search/ham
+    http://localhost:${port}/api/drivers/race/1
+
+    http://localhost:${port}/api/races/1
+    http://localhost:${port}/api/races/season/2020
+    http://localhost:${port}/api/races/season/2020/3
+    http://localhost:${port}/api/races/circuits/albert_park
+    http://localhost:${port}/api/races/circuits/albert_park/seasons/2001/2004
+
+    http://localhost:${port}/api/results/1
+    http://localhost:${port}/api/results/driver/hamilton
+    http://localhost:${port}/api/results/driver/hamilton/seasons/2020/2021
+
+    http://localhost:${port}/api/qualifying/1
+
+    http://localhost:${port}/api/standings/drivers/1
+    http://localhost:${port}/api/constructors/drivers/1
     `);
 });
