@@ -1,6 +1,10 @@
 # COMP 4513 - Assignment #1
 
-*by Gareth Carvalho*
+_**by Gareth Carvalho**_
+
+Hey Randy,
+
+This is the repository for my Assingment 1 Submission.
 
 ## Example API Requests
 
@@ -16,7 +20,6 @@
 <https://web3-f1-server.onrender.com/api/drivers/search/sch>
 <https://web3-f1-server.onrender.com/api/drivers/search/xxxx>
 <https://web3-f1-server.onrender.com/api/drivers/race/1069>
-
 <https://web3-f1-server.onrender.com/api/races/1034>
 <https://web3-f1-server.onrender.com/api/races/season/2021>
 <https://web3-f1-server.onrender.com/api/races/season/2022/4>
