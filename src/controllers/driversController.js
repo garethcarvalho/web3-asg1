@@ -32,7 +32,7 @@ async function fetchDriverByRef(req, res, sb) {
     }
 
     if (!data.length) {
-        jsonMsg(res, "Provided `ref` does not correspond to any existing driver.");
+        jsonMsg(res, `No driver corresponding to driverRef: '${driverRef}'`);
         return;
     }
 
@@ -84,7 +84,7 @@ async function fetchDriversByRaceID(req, res, sb) {
     }
 
     if (!data.length) {
-        jsonMsg(res, "No drivers in race with provided raceId. Ensure your raceId corresponds to a valid race.");
+        jsonMsg(res, `No races corresponding to race ID: '${raceId}'`);
         return;
     }
 

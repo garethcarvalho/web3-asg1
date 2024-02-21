@@ -32,7 +32,7 @@ async function fetchConstructorByRef(req, res, sb) {
     }
 
     if (!data.length) {
-        jsonMsg(res, "Provided `ref` does not correspond to any existing constructor.");
+        jsonMsg(res, `No constructor corresponding to provided constructorRef: '${constructorRef}'`);
         return;
     }
     

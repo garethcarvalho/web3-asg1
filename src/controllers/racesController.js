@@ -19,7 +19,7 @@ async function fetchRaceByID(req, res, sb) {
     }
 
     if (!data.length) {
-        jsonMsg(res, "No races correspond with the provided race ID.");
+        jsonMsg(res, `No race corresponding to raceId: '${raceId}'`);
         return;
     }
 
@@ -46,7 +46,7 @@ async function fetchRacesBySeason(req, res, sb) {
     }
 
     if (!data.length) {
-        jsonMsg(res, "No races corresponding to provided year.");
+        jsonMsg(res, `No races take place during the provided year: '${year}'`);
         return;
     }
 
@@ -75,7 +75,7 @@ async function fetchRacesBySeasonAndRound(req, res, sb) {
     }
 
     if (!data.length) {
-        jsonMsg(res, "No races corresponding to provided year, or invalid round value");
+        jsonMsg(res, `No races corresponding to given year '${year}', or given round '${round}'`);
         return;
     }
 

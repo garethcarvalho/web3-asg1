@@ -25,7 +25,7 @@ async function fetchQualifyingByRaceID(req, res, sb) {
     }
 
     if (!data.length) {
-        jsonMsg(res, "No results corresponding to the provided raceId");
+        jsonMsg(res, `No races corresponding to race ID: '${raceId}'`);
         return;
     }
 

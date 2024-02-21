@@ -32,7 +32,7 @@ async function fetchCircuitByRef(req, res, sb) {
     }
 
     if (!data.length) {
-        jsonMsg(res, "Provided `ref` does not correspond to any existing circuit.");
+        jsonMsg(res, `Provided circuitRef '${circuitRef}' does not correspond to any existing circuit.`);
         return;
     }
     
@@ -62,7 +62,7 @@ async function fetchCircuitBySeason(req, res, sb) {
     }
 
     if (!data.length) {
-        jsonMsg(res, "Provided `year` has no circuits used.");
+        jsonMsg(res, `Provided year '${year}' has no corresponding circuits.`);
         return;
     }
     

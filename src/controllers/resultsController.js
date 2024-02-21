@@ -24,7 +24,7 @@ async function fetchResultsByRaceID(req, res, sb) {
     }
 
     if (!data.length) {
-        jsonMsg(res, "No races correspond to the given 'raceId'.");
+        jsonMsg(res, `No races corresponding to race ID: '${raceId}'`);
         return;
     }
 
@@ -52,7 +52,7 @@ async function fetchResultsByDriverRef(req, res, sb) {
     }
 
     if (!data.length) {
-        jsonMsg(res, "No races correspond to the given 'driverRef'.");
+        jsonMsg(res, `No drivers corresponding to driverRef: '${driverRef}'`);
         return;
     }
 
@@ -89,7 +89,7 @@ async function fetchResultsByDriverRefAndSeason(req, res, sb) {
     }
 
     if (!data.length) {
-        jsonMsg(res, "No races correspond to the given 'driverRef'.");
+        jsonMsg(res, `No drivers corresponding to driverRef '${driverRef}', or no races take place in the given year range ${startYear}-${endYear}`);
         return;
     }
 

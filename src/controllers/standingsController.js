@@ -24,7 +24,7 @@ async function fetchDriverStandingsByRaceID(req, res, sb) {
     }
 
     if (!data.length) {
-        jsonMsg(res, "No standings corresponding to provided `raceId`.");
+        jsonMsg(res, `No races corresponding to race ID: '${raceId}'`);
         return;
     }
 
@@ -55,7 +55,7 @@ async function fetchConstructorStandingsByRaceID(req, res, sb) {
     }
 
     if (!data.length) {
-        jsonMsg(res, "No standings corresponding to provided `raceId`.");
+        jsonMsg(res, `No races corresponding to race ID: '${raceId}'`);
         return;
     }
 
