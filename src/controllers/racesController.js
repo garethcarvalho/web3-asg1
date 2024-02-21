@@ -54,7 +54,6 @@ async function fetchRacesBySeason(req, res, sb) {
 }
 
 async function fetchRacesBySeasonAndRound(req, res, sb) {
-    // TODO: Add round functionality.
     const year = parseInt(req.params.year);
     const round = parseInt(req.params.round);
 
@@ -76,7 +75,7 @@ async function fetchRacesBySeasonAndRound(req, res, sb) {
     }
 
     if (!data.length) {
-        jsonMsg(res, "No races corresponding to provided year.");
+        jsonMsg(res, "No races corresponding to provided year, or invalid round value");
         return;
     }
 

@@ -106,11 +106,11 @@ function handleQualifying(app) {
 }
 
 function handleStandings(app) {
-    app.get('/api/standings/drivers/:raceId', (req, res) => {
+    app.get('/api/standings/:raceId/drivers', (req, res) => {
         standingsController.fetchDriverStandingsByRaceID(req, res, sb);
     });
 
-    app.get('/api/standings/constructors/:raceId', (req, res) => {
+    app.get('/api/standings/:raceId/constructors', (req, res) => {
         standingsController.fetchConstructorStandingsByRaceID(req, res, sb);
     });
 }

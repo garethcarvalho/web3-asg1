@@ -12,7 +12,7 @@ async function fetchResultsByRaceID(req, res, sb) {
         .from('results')
         .select(`resultId, number, grid, position,
             drivers(driverRef, code, forename, surname),
-            races(raceId, name, round, year, date), 
+            races(name, round, year, date), 
             constructors(name, constructorRef, nationality)
         `)
         .eq('raceId', raceId)
