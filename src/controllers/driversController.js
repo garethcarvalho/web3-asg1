@@ -66,7 +66,7 @@ async function fetchDriverByNameSearch(req, res, sb) {
 }
 
 async function fetchDriversByRaceID(req, res, sb) {
-    const raceId = req.params.raceId;
+    const raceId = parseInt(req.params.raceId);
 
     if (!raceId) {
         jsonMsg(res, "Please enter a valid race ID.");

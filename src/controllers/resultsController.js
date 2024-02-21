@@ -1,7 +1,7 @@
 const { jsonMsg } = require("../util/messages.js");
 
 async function fetchResultsByRaceID(req, res, sb) {
-    const raceId = req.params.raceId;
+    const raceId = parseInt(req.params.raceId);
 
     if (!raceId) {
         jsonMsg(res, "Please use a valid race ID");

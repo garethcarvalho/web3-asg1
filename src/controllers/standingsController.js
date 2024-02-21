@@ -1,10 +1,10 @@
 const { jsonMsg } = require("../util/messages");
 
 async function fetchDriverStandingsByRaceID(req, res, sb) {
-    const raceId = req.params.raceId;
+    const raceId = parseInt(req.params.raceId);
 
     if (!raceId) {
-        jsonMsg(res, "Please enter a valid raceId");
+        jsonMsg(res, "Invalid raceId");
         return;
     }
 
@@ -32,10 +32,10 @@ async function fetchDriverStandingsByRaceID(req, res, sb) {
 }
 
 async function fetchConstructorStandingsByRaceID(req, res, sb) {
-    const raceId = req.params.raceId;
+    const raceId = parseInt(req.params.raceId);
 
     if (!raceId) {
-        jsonMsg(res, "Please enter a valid raceId");
+        jsonMsg(res, "Invalid raceId");
         return;
     }
 
