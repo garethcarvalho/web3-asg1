@@ -10,7 +10,7 @@ Just a note, services hosted on Render seem to go inactive after about an hour, 
 
 ## Example API Requests
 
-- <a href="https://web3-f1-server.onrender.com/api/seasons" target="_blank"> https://web3-f1-server.onrender.com/api/seasons</a>
+- <https://web3-f1-server.onrender.com/api/seasons>
 - <https://web3-f1-server.onrender.com/api/circuits>
 - <https://web3-f1-server.onrender.com/api/circuits/calgary>
 - <https://web3-f1-server.onrender.com/api/constructors>
