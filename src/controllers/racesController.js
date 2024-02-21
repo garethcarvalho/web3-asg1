@@ -36,7 +36,7 @@ async function fetchRacesBySeason(req, res, sb) {
 
     const { data, error } = await sb
         .from('races')
-        .select()
+        .select('raceId, year, round, name, date, time, url, circuits(name, location, country)')
         .eq('year', year)
         .order('round', { ascending: true });
 
@@ -64,7 +64,7 @@ async function fetchRacesBySeasonAndRound(req, res, sb) {
 
     const { data, error } = await sb
         .from('races')
-        .select()
+        .select('raceId, year, round, name, date, time, url, circuits(name, location, country)')
         .eq('year', year)
         .eq('round', round)
         .order('round', { ascending: true });
@@ -92,7 +92,7 @@ async function fetchRacesByCircuitRef(req, res, sb) {
 
     const { data, error } = await sb
         .from('races')
-        .select('*, circuits!inner(name)')
+        .select('raceId, year, round, name, date, time, url, circuits!inner(name, location, country)')
         .eq('circuits.circuitRef', circuitRef)
         .order('year', { ascending: true });
 
@@ -126,7 +126,7 @@ async function fetchRacesByRefAndSeasons(req, res, sb) {
 
     const { data, error } = await sb
         .from('races')
-        .select('*, circuits!inner(name)')
+        .select('raceId, year, round, name, date, time, url, circuits!inner(name, location, country)')
         .eq('circuits.circuitRef', circuitRef)
         .gte('year', startYear)
         .lte('year', endYear)

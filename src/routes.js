@@ -80,7 +80,7 @@ function handleRaces(app) {
         racesController.fetchRacesByCircuitRef(req, res, sb);
     });
 
-    app.get('/api/races/circuits/:ref/seasons/:start/:end', (req, res) => {
+    app.get('/api/races/circuits/:ref/season/:start/:end', (req, res) => {
         racesController.fetchRacesByRefAndSeasons(req, res, sb);
     });
 }
